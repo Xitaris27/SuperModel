@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GraphWalkerConvertedToJS\Objects.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">GraphWalkerConvertedToJS/</a> Objects.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/11</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @author Nils Olsson - modified by Joseph Jensen
+ */
+&nbsp;
+const Objects = () =&gt; ({
+&nbsp;
+  isNullOrEmpty<span class="fstat-no" title="function not covered" >(object) {</span>
+<span class="cstat-no" title="statement not covered" >    return object == null &amp;&amp; object == undefined;/</span>/should this be ||?
+  },
+&nbsp;
+  isNotNullOrEmpty(object) {
+    return object != null &amp;&amp; object != undefined;
+    // return !this.isNullOrEmpty(object);
+  },
+&nbsp;
+  isNull<span class="fstat-no" title="function not covered" >(object) {</span>//public static boolean isNull(Object object) {
+<span class="cstat-no" title="statement not covered" >    return object == null;</span>
+  },
+&nbsp;
+  isNotNull<span class="fstat-no" title="function not covered" >(object) {</span>// public static boolean isNotNull(Object object) {
+<span class="cstat-no" title="statement not covered" >    return object != null;</span>
+  },
+&nbsp;
+  equals<span class="fstat-no" title="function not covered" >(a, b) {</span>//public static boolean equals(Object a, Object b) {
+<span class="cstat-no" title="statement not covered" >    return (a == b) &amp;&amp; (this.isNotNull(a) &amp;&amp; Object.is(a,b));/</span>/return (a == b) || (this.isNotNull(a) &amp;&amp; a.equals(b));
+  },
+&nbsp;
+  hash<span class="fstat-no" title="function not covered" >(values) {</span>// public static int hash(Object... values) {//WHY IS THERE '...'???
+<span class="cstat-no" title="statement not covered" >    return Arrays.hashCode(values);</span>
+  },
+&nbsp;
+  //implement .freeze()?
+  unmodifiableList<span class="fstat-no" title="function not covered" >(list) {</span>//public static &lt;T&gt; List&lt;T&gt; unmodifiableList(List&lt;? extends T&gt; list) {
+<span class="cstat-no" title="statement not covered" >    return  Object.freeze(new ArrayList(list));</span>
+  },
+&nbsp;
+  unmodifiableSet<span class="fstat-no" title="function not covered" >(set) {</span>//  public static &lt;T&gt; Set&lt;T&gt; unmodifiableSet(Set&lt;? extends T&gt; set) {
+<span class="cstat-no" title="statement not covered" >    return  Object.freeze(new HashSet(set));</span>
+  },
+&nbsp;
+  unmodifiableMap<span class="fstat-no" title="function not covered" >(map) {</span>//public static &lt;K, V&gt; Map&lt;K, V&gt; unmodifiableMap(Map&lt;? extends K, ? extends V&gt; map) {
+<span class="cstat-no" title="statement not covered" >    return Object.freeze(new HashMap(map));</span>
+  }
+});
+&nbsp;
+module.exports = Objects;
+&nbsp;
+&nbsp;
+// class Objects {
+&nbsp;
+//   constructor() {}
+// isNullOrEmpty(object) {
+//   return object == null &amp;&amp; object == undefined;//should this be ||
+// }
+// isNotNullOrEmpty(object) {
+//   return object != null &amp;&amp; object != undefined;
+//   // return !this.isNullOrEmpty(object);
+// }
+&nbsp;
+// // isNullOrEmpty(map) {//public static &lt;K, V&gt; boolean isNullOrEmpty(Map&lt;K, V&gt; map) {
+// //   return !isNotNullOrEmpty(map);
+// // }
+&nbsp;
+// //  isNotNullOrEmpty(map) {//public static &lt;K, V&gt; boolean isNotNullOrEmpty(Map&lt;K, V&gt; map) {
+// //   return null != map &amp;&amp; !map.isEmpty();
+// // }
+&nbsp;
+// // isNullOrEmpty(set) {//public static &lt;V&gt; boolean isNullOrEmpty(Set&lt;V&gt; set) {
+// //   return !isNotNullOrEmpty(set);
+// // }
+&nbsp;
+// // isNotNullOrEmpty(set) {//public static &lt;V&gt; boolean isNotNullOrEmpty(Set&lt;V&gt; set) {
+// //   return null != set &amp;&amp; !set.isEmpty();
+// // }
+&nbsp;
+// // isNullOrEmpty(list) {//public static &lt;V&gt; boolean isNullOrEmpty(List&lt;V&gt; list) {
+// //   return !isNotNullOrEmpty(list);
+// // }
+&nbsp;
+// // isNotNullOrEmpty(list) {// public static &lt;V&gt; boolean isNotNullOrEmpty(List&lt;V&gt; list) {
+// //   return null != list &amp;&amp; !list.isEmpty();
+// // }
+&nbsp;
+// // isNullOrEmpty(string) {//public static boolean isNullOrEmpty(String string) {
+// //   return !isNotNullOrEmpty(string);
+// // }
+&nbsp;
+// // isNotNullOrEmpty(string) {//public static boolean isNotNullOrEmpty(String string) {
+// //   return null != string &amp;&amp; !"".equals(string);
+// // }
+&nbsp;
+// isNull(object) {//public static boolean isNull(Object object) {
+//   return object == null;
+// }
+&nbsp;
+// isNotNull(object) {// public static boolean isNotNull(Object object) {
+//   return object != null;
+// }
+&nbsp;
+// equals(a, b) {//public static boolean equals(Object a, Object b) {
+//   return (a == b) || (this.isNotNull(a) &amp;&amp; a.equals(b));
+// }
+&nbsp;
+// hash(values) {// public static int hash(Object... values) {//WHY IS THERE '...'???
+//   return Arrays.hashCode(values);
+// }
+&nbsp;
+&nbsp;
+// //implement .freeze()?
+// unmodifiableList(list) {//public static &lt;T&gt; List&lt;T&gt; unmodifiableList(List&lt;? extends T&gt; list) {
+//   return Collections.unmodifiableList(new ArrayList(list));
+// }
+&nbsp;
+// unmodifiableSet(set) {//  public static &lt;T&gt; Set&lt;T&gt; unmodifiableSet(Set&lt;? extends T&gt; set) {
+//   return Collections.unmodifiableSet(new HashSet(set));
+// }
+&nbsp;
+// unmodifiableMap(map) {//public static &lt;K, V&gt; Map&lt;K, V&gt; unmodifiableMap(Map&lt;? extends K, ? extends V&gt; map) {
+//   return Collections.unmodifiableMap(new HashMap(map));
+// }
+// }</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 13 2018 11:08:01 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for classes version\RuntimeModel.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">classes version/</a> RuntimeModel.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/133</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.78% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/133</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * #%L
+ * GraphWalker Core
+ * %%
+ * Copyright (C) 2005 - 2014 GraphWalker
+ * %%
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * #L%
+ */
+&nbsp;
+/**
+ * @author Nils Olsson - modified by Joseph Jensen
+ */
+&nbsp;
+/**
+ * &lt;h1&gt;RuntimeModel&lt;/h1&gt;
+ * Immutable class for Model
+ * &lt;/p&gt;
+ * An immutable model guarantees that that the internal states of
+ * the instance will not change after it's construction.
+ */
+&nbsp;
+let BuilderFactory = require('./BuilderFactory.js');
+let Objects = require('./Objects.js');
+let RuntimeBase = require('./RuntimeBase.js');
+let RuntimeEdge = require('./RuntimeEdge.js');
+let RuntimeVertex = require('./RuntimeVertex.js');
+&nbsp;
+let HashMap = require('../../../node_modules/hashmap');
+&nbsp;
+let builderFactory = new BuilderFactory();
+let objects = new Objects();
+&nbsp;
+class RuntimeModel extends RuntimeBase {//  public static class RuntimeModel extends RuntimeBase {
+&nbsp;
+  constructor<span class="fstat-no" title="function not covered" >(model) {</span>//    private RuntimeModel(Model model) {
+<span class="cstat-no" title="statement not covered" >    super(model.getId(), model.getName(), model.getActions(), model.getRequirements(), model.getProperties());</span>
+<span class="cstat-no" title="statement not covered" >    this.vertices = builderFactory.build(model.getVertices());</span>
+<span class="cstat-no" title="statement not covered" >    this.edges = builderFactory.build(model.getEdges());</span>
+<span class="cstat-no" title="statement not covered" >    this.edgesByNameCache = this.createEdgesByNameCache();</span>
+<span class="cstat-no" title="statement not covered" >    this.verticesByNameCache = this.createVerticesByNameCache();</span>
+<span class="cstat-no" title="statement not covered" >    this.inEdgesByVertexCache = this.createInEdgesByVertexCache();</span>
+<span class="cstat-no" title="statement not covered" >    this.outEdgesByVertexCache = this.createOutEdgesByVertexCache();</span>
+<span class="cstat-no" title="statement not covered" >    this.elementsCache = createElementCache(this.vertices, this.edges);</span>
+<span class="cstat-no" title="statement not covered" >    this.elementsByNameCache = this.createElementsByNameCache();</span>
+<span class="cstat-no" title="statement not covered" >    this.elementsByElementCache = this.createElementsByElementCache(this.elementsCache, this.outEdgesByVertexCache);</span>
+<span class="cstat-no" title="statement not covered" >    this.sharedStateCache = this.createSharedStateCache();</span>
+  }
+&nbsp;
+  /**
+   * Gets the list of vertices of the model.
+   *
+   * @return The list of vertices
+   * @see Model#getVertices
+   */
+  getVertices<span class="fstat-no" title="function not covered" >() {</span>//    public List&lt;RuntimeVertex&gt; getVertices() {
+<span class="cstat-no" title="statement not covered" >    return this.vertices;</span>
+  }
+&nbsp;
+  /**
+   * Gets the unique list of shared state names.
+   *
+   * @return The list of shared states.
+   * @see Vertex#setSharedState
+   */
+  getAllSharedStates<span class="fstat-no" title="function not covered" >() {</span>//    public Set&lt;String&gt; getSharedStates() {
+<span class="cstat-no" title="statement not covered" >    return this.sharedStateCache.keys();</span>
+  }
+&nbsp;
+  /**
+   * Gets the list of vertices that matches a shared state name.
+   *
+   * @param sharedState The shared state name too be matched.
+   * @return The list of matching shared states.
+   * @see Vertex#setSharedState
+   */
+&nbsp;
+  getSharedStates<span class="fstat-no" title="function not covered" >(sharedState) {</span>//    public List&lt;RuntimeVertex&gt; getSharedStates(String sharedState) {
+<span class="cstat-no" title="statement not covered" >    return this.sharedStateCache.get(sharedState);</span>
+  }
+&nbsp;
+  /**
+   * Will search in the model if there is a vertex that has a shared state name that matches
+   * the given name.
+   *
+   * @param sharedState The shared state name too be matched.
+   * @return True if the model has a matching shared state.
+   * @see Vertex#setSharedState
+   */
+  hasSharedState<span class="fstat-no" title="function not covered" >(sharedState) {</span>//    public boolean hasSharedState(String sharedState) {
+<span class="cstat-no" title="statement not covered" >    return this.sharedStateCache.has(sharedState);</span>
+  }
+&nbsp;
+  /**
+   * Will search the model for vertices that has shared states. If any is found, then true will
+   * be returned.
+   *
+   * @return True if the models has any vertex with a shared state.
+   * @see Vertex#setSharedState
+   */
+  hasSharedStates<span class="fstat-no" title="function not covered" >() {</span>//    public boolean hasSharedStates() {
+<span class="cstat-no" title="statement not covered" >    return (this.sharedStateCache.count() &gt; 0);</span>
+  }
+&nbsp;
+  /**
+   * Searches the model vertices that matches search string.
+   *
+   * @param name The name of the vertex as a string.
+   * @return The list of matching vertices.
+   * @see Vertex#setName
+   */
+  findVertices<span class="fstat-no" title="function not covered" >(name) {</span>//    public List&lt;RuntimeVertex&gt; findVertices(String name) {    //findVertexByName
+<span class="cstat-no" title="statement not covered" >    return this.verticesByNameCache.get(name);</span>
+  }
+&nbsp;
+  /**
+   * For the given vertex, all in-edges will be returned.
+   * &lt;/p&gt;
+   * Any edge that has a target vertex that is identical to vertex, will be returned.
+   *
+   * @param vertex The vertex to match
+   * @return List of matching in-edges.
+   */
+  getInEdges<span class="fstat-no" title="function not covered" >(vertex) {</span>//    public List&lt;RuntimeEdge&gt; getInEdges(RuntimeVertex vertex) {
+<span class="cstat-no" title="statement not covered" >    return this.inEdgesByVertexCache.get(vertex);</span>
+  }
+&nbsp;
+  /**
+   * Gets the all edges in the model.
+   *
+   * @return A list of edges.
+   */
+  getEdges<span class="fstat-no" title="function not covered" >() {</span>//    public List&lt;RuntimeEdge&gt; getEdges() {
+<span class="cstat-no" title="statement not covered" >    return this.edges;</span>
+  }
+&nbsp;
+  /**
+   * For the given vertex, all out-edges will be returned.
+   * &lt;/p&gt;
+   * Any edge that has a source vertex that is identical to vertex, will be returned.
+   *
+   * @param vertex The vertex to match
+   * @return List of matching out-edges.
+   */
+  getOutEdges<span class="fstat-no" title="function not covered" >(vertex) {</span>//    public List&lt;RuntimeEdge&gt; getOutEdges(RuntimeVertex vertex) {
+<span class="cstat-no" title="statement not covered" >    return this.outEdgesByVertexCache.get(vertex);</span>
+  }
+&nbsp;
+  /**
+   * Searches the model for edges matching the search string.
+   * &lt;/p&gt;
+   * Any edge that has a matching name, will be returned.
+   *
+   * @param name The name of edges to be matched.
+   * @return The list of matching edges.
+   * @see Edge#setName
+   */
+  findEdges<span class="fstat-no" title="function not covered" >(name) {</span>//    public List&lt;RuntimeEdge&gt; findEdges(String name) {
+<span class="cstat-no" title="statement not covered" >    return this.edgesByNameCache.get(name);</span>
+  }
+&nbsp;
+  /**
+   * Searches the model for any element matching the search string.
+   * &lt;/p&gt;
+   * Any element that has a matching name, will be returned. An element can be either an edge
+   * or a vertex.
+   *
+   * @param name The name of elements to be matched.
+   * @return The list of matching elements.
+   * @see Element#getName
+   */
+  findElements<span class="fstat-no" title="function not covered" >(name) {</span>//    public List&lt;Element&gt; findElements(String name) {
+<span class="cstat-no" title="statement not covered" >    return this.elementsByNameCache.get(name);</span>
+  }
+&nbsp;
+  /**
+   * Will return a list of all elements in a model.
+   * &lt;/p&gt;
+   * The list will contain all edges and vertices in the model.
+   *
+   * @return The list of all elements in the model.
+   */
+  getElements<span class="fstat-no" title="function not covered" >() {</span>//public List&lt;Element&gt; getElements() {
+<span class="cstat-no" title="statement not covered" >    return this.elementsCache;</span>
+  }
+&nbsp;
+  /**
+   * Will return the element with the given id.
+   * &lt;/p&gt;
+   *
+   * @param id The id of the element.
+   * @return The element with the given id
+   */
+  getElementById<span class="fstat-no" title="function not covered" >(id) {</span>//public Element getElementById(String id) {
+<span class="cstat-no" title="statement not covered" >    for (let element of this.elementsCache) {//      for (Element element : elementsCache) {</span>
+<span class="cstat-no" title="statement not covered" >      if (element.getId() === id) {</span>
+<span class="cstat-no" title="statement not covered" >        return element;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+  /**
+   * TODO: Add doc
+   */
+  getElementsByElement<span class="fstat-no" title="function not covered" >(element) {</span>//public List&lt;Element&gt; getElements(Element element) {
+<span class="cstat-no" title="statement not covered" >    return this.elementsByElementCache.get(element);</span>
+  }
+  
+  createElementCache<span class="fstat-no" title="function not covered" >(vertices = this.vertices, edges = this.edges) {</span>
+<span class="cstat-no" title="statement not covered" >    return createElementCache(vertices, edges);</span>
+  }
+  
+  createElementsByElementCache<span class="fstat-no" title="function not covered" >(elements = this.elementsCache, outEdges = this.outEdgesByVertexCache) {</span>
+<span class="cstat-no" title="statement not covered" >    return createElementsByElementCache(elements, outEdges);</span>
+  }
+&nbsp;
+  createElementsByNameCache<span class="fstat-no" title="function not covered" >(elementsCache = this.elementsCache) {</span>
+<span class="cstat-no" title="statement not covered" >    return createElementsByNameCache(elementsCache);</span>
+  }
+&nbsp;
+  createEdgesByNameCache<span class="fstat-no" title="function not covered" >(edges = this.edges) {</span>
+<span class="cstat-no" title="statement not covered" >    return createEdgesByNameCache(edges);</span>
+  }
+&nbsp;
+  createVerticesByNameCache<span class="fstat-no" title="function not covered" >(vertices = this.vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    return createVerticesByNameCache(vertices);</span>
+  }
+&nbsp;
+  createInEdgesByVertexCache<span class="fstat-no" title="function not covered" >(vertices = this.vertices, edges = this.edges) {</span>
+<span class="cstat-no" title="statement not covered" >    return createInEdgesByVertexCache(vertices, edges);</span>
+  }
+&nbsp;
+  createOutEdgesByVertexCache<span class="fstat-no" title="function not covered" >(vertices = this.vertices, edges = this.edges) {</span>
+<span class="cstat-no" title="statement not covered" >    return createOutEdgesByVertexCache(vertices, edges);</span>
+  }
+&nbsp;
+  createSharedStateCache<span class="fstat-no" title="function not covered" >(vertices = this.vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    return createSharedStateCache(vertices);</span>
+  }
+&nbsp;
+  //@SuppressWarnings("unchecked")
+  cast<span class="fstat-no" title="function not covered" >(list) {</span>//private List&lt;Element&gt; cast(List&lt;? extends Element&gt; list) {//PRETTY SURE THIS FUNCTION IS UNNECESSARY BECAUSE JS JUST AUTO CASTS, actual implementation might require a touch of finesse 
+<span class="cstat-no" title="statement not covered" >    return list;/</span>/dirty fix so we can try to kick out the MVP
+    //return Object.assign(new List&lt;Element&gt;(), list);
+    //return (List&lt;Element&gt;) list;
+  }
+&nbsp;
+  makeImmutable<span class="fstat-no" title="function not covered" >(source) {</span>//private &lt;K, E&gt; Map&lt;K, List&lt;E&gt;&gt; makeImmutable(Map&lt;K, List&lt;E&gt;&gt; source) {
+<span class="cstat-no" title="statement not covered" >    let map = new HashMap();/</span>/Map&lt;K, List&lt;E&gt;&gt; map = new HashMap&lt;&gt;();
+<span class="cstat-no" title="statement not covered" >    for (key of source.keySet()) {//      for (K key : source.keySet()) {</span>
+<span class="cstat-no" title="statement not covered" >      map.set(key, unmodifiableList(source.get(key)));</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return unmodifiableMap(map);</span>
+  }
+&nbsp;
+  /**
+   * TODO: Doc...
+   */
+  //@Override
+  accept<span class="fstat-no" title="function not covered" >(visitor) {</span>//    public void accept(ElementVisitor visitor) {
+<span class="cstat-no" title="statement not covered" >    visitor.visit(this);</span>
+  }
+&nbsp;
+  //@Override
+  hashCode<span class="fstat-no" title="function not covered" >() {</span>//public int hashCode() {
+<span class="cstat-no" title="statement not covered" >    const prime = 31;</span>
+<span class="cstat-no" title="statement not covered" >    let result = 1;</span>
+<span class="cstat-no" title="statement not covered" >    result = prime * result + ((this.edges == null) ? 0 : this.edges.hashCode());</span>
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.edgesByNameCache == null) ? 0 : this.edgesByNameCache
+        .hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.elementsByElementCache == null) ? 0
+                                                  : this.elementsByElementCache.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.elementsByNameCache == null) ? 0 : this.elementsByNameCache
+        .hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.elementsCache == null) ? 0 : this.elementsCache.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.inEdgesByVertexCache == null) ? 0
+                                                : this.inEdgesByVertexCache.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.outEdgesByVertexCache == null) ? 0
+                                                : this.outEdgesByVertexCache.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.sharedStateCache == null) ? 0 : this.sharedStateCache
+        .hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.vertices == null) ? 0 : this.vertices.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime</span>
+              * result
+              + ((this.verticesByNameCache == null) ? 0 : this.verticesByNameCache
+        .hashCode());
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  }
+&nbsp;
+  //@Override
+  equals<span class="fstat-no" title="function not covered" >(object) {</span>//public boolean equals(Object o) {
+<span class="cstat-no" title="statement not covered" >    if (!super.equals(object)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let runtimeModelObject = Object.assign(new RuntimeModel(), object);/</span>/I Think this is fixed
+    //RuntimeModel that = (RuntimeModel) o;
+<span class="cstat-no" title="statement not covered" >    return Objects.equals(this.vertices, runtimeModelObject.vertices) &amp;&amp;</span>
+            Objects.equals(this.edges, runtimeModelObject.edges) &amp;&amp;
+            Objects.equals(this.elementsCache, runtimeModelObject.elementsCache) &amp;&amp;
+            Objects.equals(this.elementsByElementCache, runtimeModelObject.elementsByElementCache) &amp;&amp;
+            Objects.equals(this.elementsByNameCache, runtimeModelObject.elementsByNameCache) &amp;&amp;
+            Objects.equals(this.edgesByNameCache, runtimeModelObject.edgesByNameCache) &amp;&amp;
+            Objects.equals(this.verticesByNameCache, runtimeModelObject.verticesByNameCache) &amp;&amp;
+            Objects.equals(this.inEdgesByVertexCache, runtimeModelObject.inEdgesByVertexCache) &amp;&amp;
+            Objects.equals(this.outEdgesByVertexCache, runtimeModelObject.outEdgesByVertexCache) &amp;&amp;
+            Objects.equals(this.sharedStateCache, runtimeModelObject.sharedStateCache);
+  }
+  
+}
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createElementCache(vertices, edges) {</span>//private List&lt;Element&gt; createElementCache() {
+<span class="cstat-no" title="statement not covered" >  let elements = [];/</span>/List&lt;Element&gt; elements = new ArrayList&lt;&gt;();
+<span class="cstat-no" title="statement not covered" >  elements = elements.concat(vertices);</span>
+<span class="cstat-no" title="statement not covered" >  elements = elements.concat(edges);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return elements;/</span>/return unmodifiableList(elements);
+}
+&nbsp;
+//This method seems a little convoluted/inefficient to me. I might rewrite
+<span class="fstat-no" title="function not covered" >function createElementsByElementCache(elements, outEdges) {</span>//private Map&lt;Element, List&lt;Element&gt;&gt; createElementsByElementCache(List&lt;Element&gt; elements, Map&lt;RuntimeVertex, List&lt;RuntimeEdge&gt;&gt; outEdges) {
+<span class="cstat-no" title="statement not covered" >  let elementsByElementCache = new HashMap();/</span>/Map&lt;Element, List&lt;Element&gt;&gt; elementsByElementCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let element of elements) {//      for (Element element : elements) {</span>
+<span class="cstat-no" title="statement not covered" >    if (element instanceof RuntimeEdge) {</span>
+<span class="cstat-no" title="statement not covered" >      let edge = element;</span>
+<span class="cstat-no" title="statement not covered" >      elementsByElementCache.set(element, edge.getTargetVertex());</span>
+    } else <span class="cstat-no" title="statement not covered" >if (element instanceof RuntimeVertex) {</span>
+<span class="cstat-no" title="statement not covered" >      let vertex = element;</span>
+<span class="cstat-no" title="statement not covered" >      elementsByElementCache.set(element, outEdges.get(vertex));</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return elementsByElementCache;/</span>/return makeImmutable(elementsByElementCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createElementsByNameCache(elementsCache) {</span>//private Map&lt;String, List&lt;Element&gt;&gt; createElementsByNameCache() {
+<span class="cstat-no" title="statement not covered" >  let elementsByElementCache = new HashMap();/</span>/      Map&lt;String, List&lt;Element&gt;&gt; elementsByElementCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let element of elementsCache) {//      for (Element element : createElementCache()) {</span>
+<span class="cstat-no" title="statement not covered" >    if (element.hasName()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!elementsByElementCache.has(element.getName())) {</span>
+<span class="cstat-no" title="statement not covered" >        elementsByElementCache.set(element.getName(), []);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      elementsByElementCache.get(element.getName()).push(element);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return elementsByElementCache;/</span>/return makeImmutable(elementsByElementCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createEdgesByNameCache(edges) {</span>//private Map&lt;String, List&lt;RuntimeEdge&gt;&gt; createEdgesByNameCache() {
+<span class="cstat-no" title="statement not covered" >  let edgesByNameCache = new HashMap();</span>
+  
+<span class="cstat-no" title="statement not covered" >  for (let edge of edges) {//      for (RuntimeEdge edge : edges) {</span>
+<span class="cstat-no" title="statement not covered" >    if (edge.hasName()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!edgesByNameCache.has(edge.getName())) {</span>
+<span class="cstat-no" title="statement not covered" >        edgesByNameCache.set(edge.getName(), []);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      edgesByNameCache.get(edge.getName()).push(edge);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return edgesByNameCache;/</span>/return makeImmutable(edgesByNameCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createVerticesByNameCache(vertices) {</span>//private Map&lt;String, List&lt;RuntimeVertex&gt;&gt; createVerticesByNameCache() {
+<span class="cstat-no" title="statement not covered" >  let verticesByNameCache = new HashMap();/</span>/Map&lt;String, List&lt;RuntimeVertex&gt;&gt; verticesByNameCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let vertex of vertices) {//      for (RuntimeVertex vertex : vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    if (vertex.hasName()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!verticesByNameCache.has(vertex.getName())) {</span>
+<span class="cstat-no" title="statement not covered" >        verticesByNameCache.set(vertex.getName(), []);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      verticesByNameCache.get(vertex.getName()).push(vertex);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return verticesByNameCache;/</span>/return makeImmutable(verticesByNameCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createInEdgesByVertexCache(vertices, edges) {</span>//private Map&lt;RuntimeVertex, List&lt;RuntimeEdge&gt;&gt; createInEdgesByVertexCache() {
+<span class="cstat-no" title="statement not covered" >  let inEdgesByVertexCache = new HashMap();/</span>/  Map&lt;RuntimeVertex, List&lt;RuntimeEdge&gt;&gt; inEdgesByVertexCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let vertex of vertices) {//      for (RuntimeVertex vertex : vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    inEdgesByVertexCache.set(vertex, []);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  for (let edge of edges) {//      for (RuntimeEdge edge : edges) {</span>
+<span class="cstat-no" title="statement not covered" >    let vertex = edge.getTargetVertex();/</span>/        RuntimeVertex vertex = edge.getTargetVertex();
+<span class="cstat-no" title="statement not covered" >    if (objects.isNotNull(vertex)) {</span>
+<span class="cstat-no" title="statement not covered" >      inEdgesByVertexCache.get(vertex).push(edge);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return inEdgesByVertexCache;/</span>/return makeImmutable(inEdgesByVertexCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createOutEdgesByVertexCache(vertices, edges) {</span>//private Map&lt;RuntimeVertex, List&lt;RuntimeEdge&gt;&gt; createOutEdgesByVertexCache() {
+<span class="cstat-no" title="statement not covered" >  let outEdgesByVertexCache = new HashMap();/</span>/ Map&lt;RuntimeVertex, List&lt;RuntimeEdge&gt;&gt; outEdgesByVertexCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let vertex of vertices) {//      for (RuntimeVertex vertex : vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    outEdgesByVertexCache.set(vertex, []);</span>
+  }
+  
+<span class="cstat-no" title="statement not covered" >  for (let edge of edges) {//      for (RuntimeEdge edge : edges) {</span>
+<span class="cstat-no" title="statement not covered" >    let vertex = edge.getSourceVertex();/</span>/        RuntimeVertex vertex = edge.getSourceVertex();
+<span class="cstat-no" title="statement not covered" >    if (objects.isNotNull(vertex)) {</span>
+<span class="cstat-no" title="statement not covered" >      outEdgesByVertexCache.get(vertex).push(edge);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return outEdgesByVertexCache;/</span>/return makeImmutable(outEdgesByVertexCache);
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function createSharedStateCache(vertices) {</span>//private Map&lt;String, List&lt;RuntimeVertex&gt;&gt; createSharedStateCache() {
+<span class="cstat-no" title="statement not covered" >  let sharedStateCache = new HashMap();/</span>/Map&lt;String, List&lt;RuntimeVertex&gt;&gt; sharedStateCache = new HashMap&lt;&gt;();
+  
+<span class="cstat-no" title="statement not covered" >  for (let vertex of vertices) {//for (RuntimeVertex vertex : vertices) {</span>
+<span class="cstat-no" title="statement not covered" >    if (vertex.hasSharedState()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!sharedStateCache.has(vertex.getSharedState())) {</span>
+<span class="cstat-no" title="statement not covered" >        sharedStateCache.set(vertex.getSharedState(), []);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      sharedStateCache.get(vertex.getSharedState()).push(vertex);</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  return sharedStateCache;/</span>/return makeImmutable(sharedStateCache);
+}
+&nbsp;
+&nbsp;
+module.exports = RuntimeModel;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 20 2018 10:30:42 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

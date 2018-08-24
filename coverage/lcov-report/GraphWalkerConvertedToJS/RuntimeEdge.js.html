@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GraphWalkerConvertedToJS\RuntimeEdge.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">GraphWalkerConvertedToJS/</a> RuntimeEdge.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * &lt;h1&gt;RuntimeEdge&lt;/h1&gt;
+ * Immutable class for Edge
+ * &lt;/p&gt;
+ * This class is used in models. It guarantees that that the internal states of
+ * the instance will not change after it's construction.
+ * &lt;/p&gt;
+ */
+"use strict";
+let Objects = require('./Objects.js');
+let RuntimeBase = require('./RuntimeBase.js');
+&nbsp;
+&nbsp;
+/*{
+  sourceVertex,
+  targetVertex,
+  weight,
+  dependency,
+  runtimeBase = RuntimeBase()
+} = {
+&nbsp;
+}*/
+const RuntimeEdge = ({
+  edge
+} = {}) =&gt; (<span class="cstat-no" title="statement not covered" >{//  public static class RuntimeEdge extends RuntimeBase {</span>
+&nbsp;
+  sourceVertex: build(edge.getSourceVertex()),//can I move build() back into the 'class'?
+  targetVertex: build(edge.getTargetVertex()),
+  //guard: edge.getGuard(),//this is a java interface type that is used to guard access to another object.
+  weight: edge.getWeight(),
+  dependency: edge.getDependency(),
+  runtimeBase: RuntimeBase(edge.cachedBuilder.builderBase.getId(), edge.cachedBuilder.builderBase.getName(), edge.getActions(), edge.cachedBuilder.builderBase.getRequirements(), edge.cachedBuilder.builderBase.getProperties()),
+&nbsp;
+//moved outside of the class  
+//  build(builder) {//    private &lt;T&gt; T build(Builder&lt;T&gt; builder) {
+&nbsp;
+  /**
+   * Gets the source vertex.
+   *
+   * @return The source vertex.
+   * @see Edge#setSourceVertex
+   */
+  getSourceVertex<span class="fstat-no" title="function not covered" >() {</span>//    public RuntimeVertex getSourceVertex() {
+<span class="cstat-no" title="statement not covered" >    return this.sourceVertex;</span>
+  },
+&nbsp;
+  /**
+   * Gets the target vertex of the edge.
+   *
+   * @return The vertex.
+   * @see Edge#setTargetVertex
+   */
+  getTargetVertex<span class="fstat-no" title="function not covered" >() {</span>//    public RuntimeVertex getTargetVertex() {
+<span class="cstat-no" title="statement not covered" >    return this.targetVertex;</span>
+  },
+&nbsp;
+  /**
+   * Gets the guard of the edge.
+   *
+   * @return The guard.
+   * @see Edge#setGuard
+   */
+  getGuard<span class="fstat-no" title="function not covered" >() {</span>//    public Guard getGuard() {
+<span class="cstat-no" title="statement not covered" >    return this.guard;</span>
+  },
+&nbsp;
+  hasGuard<span class="fstat-no" title="function not covered" >() {</span>//    public boolean hasGuard() {
+<span class="cstat-no" title="statement not covered" >    return isNotNull(this.guard) &amp;&amp; isNotNullOrEmpty(this.guard.getScript());</span>
+  },
+&nbsp;
+  /**
+   * Gets the weight of the edge.
+   *
+   * @return The weight as double.
+   * @see Edge#setWeight
+   */
+  getWeight<span class="fstat-no" title="function not covered" >() {</span>//    public Double getWeight() {
+<span class="cstat-no" title="statement not covered" >    return this.weight;</span>
+  },
+&nbsp;
+  /**
+   * TODO Needs documentation
+   */
+  //@Override
+  accept<span class="fstat-no" title="function not covered" >(visitor) {</span>//    public void accept(ElementVisitor visitor) {
+<span class="cstat-no" title="statement not covered" >    visitor.visit(this);</span>
+  },
+&nbsp;
+  //@Override
+  hashCode<span class="fstat-no" title="function not covered" >() {</span>//    public int hashCode() {
+<span class="cstat-no" title="statement not covered" >    const prime = 31;</span>
+<span class="cstat-no" title="statement not covered" >    let result = 1;</span>
+<span class="cstat-no" title="statement not covered" >    result = prime * result + ((this.guard == null) ? 0 : this.guard.hashCode());</span>
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.sourceVertex == null) ? 0 : this.sourceVertex.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.targetVertex == null) ? 0 : this.targetVertex.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.weight == null) ? 0 : this.weight.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+              + ((this.dependency == null) ? 0 : this.dependency.hashCode());
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  },
+&nbsp;
+  //@Override
+  equals<span class="fstat-no" title="function not covered" >(object) {</span>//    public boolean equals(Object o) {
+<span class="cstat-no" title="statement not covered" >    if (!this.runtimeBase.equals(object)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    let runtimeEdgeObject = Object.assign(RuntimeEdge(), object);/</span>/I Think this is fixed
+    //RuntimeEdge that = (RuntimeEdge) object;
+<span class="cstat-no" title="statement not covered" >    return Objects.equals(this.sourceVertex, runtimeEdgeObject.sourceVertex) &amp;&amp;</span>
+            Objects.equals(this.targetVertex, runtimeEdgeObject.targetVertex) &amp;&amp;
+            Objects.equals(this.guard, runtimeEdgeObject.guard) &amp;&amp;
+            Objects.equals(this.weight, runtimeEdgeObject.weight) &amp;&amp;
+            Objects.equals(this.dependency, runtimeEdgeObject.dependency);
+  },
+&nbsp;
+  /**
+   * Gets the dependency of the edge.
+   *
+   * @return The dependency as Integer.
+   * @see Edge#setDependency
+   */
+  getDependency<span class="fstat-no" title="function not covered" >() {</span>//    public Integer getDependency() {
+<span class="cstat-no" title="statement not covered" >    return this.dependency;</span>
+  },
+&nbsp;
+  /**
+   * Gets the dependency of the edge.
+   *
+   * @return The dependency as Double.
+   * @see Edge#setDependency
+   */
+  getDependencyAsDouble<span class="fstat-no" title="function not covered" >() {</span>//    public double getDependencyAsDouble() {//PROBABLY JUST DELETE THIS METHOD; This 'fancy' way of forcing the type conversion is unnecessary
+<span class="cstat-no" title="statement not covered" >    let dependencyCopy = this.getDependency();/</span>/I think I can re-simplify this
+<span class="cstat-no" title="statement not covered" >      return dependencyCopy / 100.00;/</span>/return (double) getDependency() / 100;
+  }
+&nbsp;
+});
+&nbsp;
+<span class="fstat-no" title="function not covered" >function build(builder) {</span>//    private &lt;T&gt; T build(Builder&lt;T&gt; builder) {
+<span class="cstat-no" title="statement not covered" >  let objects = Objects();</span>
+<span class="cstat-no" title="statement not covered" >  return objects.isNotNull(builder) ? builder.cachedBuilder.build() : null;</span>
+}
+&nbsp;
+module.exports = RuntimeEdge; 
+&nbsp;
+&nbsp;
+// let sourceVertex;
+// let targetVertex;
+// let guard;//this is a java interface type that is used to guard access to another object.
+// let weight;
+// let dependency;
+&nbsp;
+// class RuntimeEdge extends RuntimeBase {//  public static class RuntimeEdge extends RuntimeBase {
+&nbsp;
+//   constructor(edge) {//    private RuntimeEdge(Edge edge) {
+//     super(edge.getId(), edge.getName(), edge.getActions(), edge.getRequirements(), edge.getProperties());
+//     sourceVertex = build(edge.getSourceVertex());
+//     targetVertex = build(edge.getTargetVertex());
+//     guard = edge.getGuard();
+//     weight = edge.getWeight();
+//     dependency = edge.getDependency();
+//   }
+&nbsp;
+// //moved outside of the class  
+// //  build(builder) {//    private &lt;T&gt; T build(Builder&lt;T&gt; builder) {
+&nbsp;
+//   /**
+//    * Gets the source vertex.
+//    *
+//    * @return The source vertex.
+//    * @see Edge#setSourceVertex
+//    */
+//   getSourceVertex() {//    public RuntimeVertex getSourceVertex() {
+//     return sourceVertex;
+//   }
+&nbsp;
+//   /**
+//    * Gets the target vertex of the edge.
+//    *
+//    * @return The vertex.
+//    * @see Edge#setTargetVertex
+//    */
+//   getTargetVertex() {//    public RuntimeVertex getTargetVertex() {
+//     return targetVertex;
+//   }
+&nbsp;
+//   /**
+//    * Gets the guard of the edge.
+//    *
+//    * @return The guard.
+//    * @see Edge#setGuard
+//    */
+//   getGuard() {//    public Guard getGuard() {
+//     return guard;
+//   }
+&nbsp;
+//   hasGuard() {//    public boolean hasGuard() {
+//     return isNotNull(guard) &amp;&amp; isNotNullOrEmpty(guard.getScript());
+//   }
+&nbsp;
+//   /**
+//    * Gets the weight of the edge.
+//    *
+//    * @return The weight as double.
+//    * @see Edge#setWeight
+//    */
+//   getWeight() {//    public Double getWeight() {
+//     return weight;
+//   }
+&nbsp;
+//   /**
+//    * TODO Needs documentation
+//    */
+//   //@Override
+//   accept(visitor) {//    public void accept(ElementVisitor visitor) {
+//     visitor.visit(this);
+//   }
+&nbsp;
+//   //@Override
+//   hashCode() {//    public int hashCode() {
+//     const prime = 31;
+//     let result = 1;
+//     result = prime * result + ((guard == null) ? 0 : guard.hashCode());
+//     result = prime * result
+//               + ((sourceVertex == null) ? 0 : sourceVertex.hashCode());
+//     result = prime * result
+//               + ((targetVertex == null) ? 0 : targetVertex.hashCode());
+//     result = prime * result
+//               + ((weight == null) ? 0 : weight.hashCode());
+//     result = prime * result
+//               + ((dependency == null) ? 0 : dependency.hashCode());
+//     return result;
+//   }
+&nbsp;
+//   //@Override
+//   equals(object) {//    public boolean equals(Object o) {
+//     if (!super.equals(object)) {
+//       return false;
+//     }
+//     let runtimeEdgeObject = Object.assign(new RuntimeEdge(), object);//I Think this is fixed
+//     //RuntimeEdge that = (RuntimeEdge) object;
+//     return Objects.equals(sourceVertex, runtimeEdgeObject.sourceVertex) &amp;&amp;
+//             Objects.equals(targetVertex, runtimeEdgeObject.targetVertex) &amp;&amp;
+//             Objects.equals(guard, runtimeEdgeObject.guard) &amp;&amp;
+//             Objects.equals(weight, runtimeEdgeObject.weight) &amp;&amp;
+//             Objects.equals(dependency, runtimeEdgeObject.dependency);
+//   }
+&nbsp;
+//   /**
+//    * Gets the dependency of the edge.
+//    *
+//    * @return The dependency as Integer.
+//    * @see Edge#setDependency
+//    */
+//   getDependency() {//    public Integer getDependency() {
+//     return dependency;
+//   }
+&nbsp;
+//   /**
+//    * Gets the dependency of the edge.
+//    *
+//    * @return The dependency as Double.
+//    * @see Edge#setDependency
+//    */
+//   getDependencyAsDouble() {//    public double getDependencyAsDouble() {//PROBABLY JUST DELETE THIS METHOD; This 'fancy' way of forcing the type conversion is unnecessary
+//     let dependencyCopy = this.getDependency();
+//       return dependencyCopy / 100.00;//return (double) getDependency() / 100;
+//   }
+&nbsp;
+// }
+&nbsp;
+// function build(builder) {//    private &lt;T&gt; T build(Builder&lt;T&gt; builder) {
+//   let objects = new Objects();
+//   return objects.isNotNull(builder) ? builder.build() : null;
+// }
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 13 2018 11:08:01 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

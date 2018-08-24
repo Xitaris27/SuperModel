@@ -1,0 +1,85 @@
+{
+  "_from": "git+https://github.com/fs-eng/qa-shared-base.git",
+  "_id": "qa-shared-base@3.3.11",
+  "_inBundle": false,
+  "_location": "/GraphWalker",
+  "_requested": {
+    "type": "git",
+    "raw": "qa-shared-base@git+https://github.com/fs-eng/qa-shared-base.git",
+    "name": "qa-shared-base",
+    "escapedName": "qa-shared-base",
+    "rawSpec": "git+https://github.com/fs-eng/qa-shared-base.git",
+    "saveSpec": "git+https://github.com/fs-eng/qa-shared-base.git",
+    "fetchSpec": "https://github.com/fs-eng/qa-shared-base.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/fs-eng/qa-shared-base.git#4c902a61caaa5ad3b9571d5e91854587781af762",
+  "_spec": "qa-shared-base@git+https://github.com/fs-eng/qa-shared-base.git",
+  "_where": "C:\\Users\\Xitaris27\\Documents\\GitHub\\uiat-protractor",
+  "bugs": {
+    "url": "https://github.com/fs-eng/qa-shared-base/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Joseph Jensen"
+    }
+  ],
+  "dependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "clone-deep": "^4.0.0",
+    "double-ended-queue": "^2.1.0-0",
+    "hashmap": "^2.3.0",
+    "hashset": "0.0.6",
+    "json-2-csv": "^2.2.1",
+    "microtime": "^2.1.8",
+    "mocha": "^4.0.1",
+    "promise": "^7.1.1",
+    "q": "^1.4.1",
+    "set": "^1.1.1",
+    "uuid": "^3.2.1",
+    "xml2js": "^0.4.19"
+  },
+  "deprecated": false,
+  "description": "QA UI Automation Testing Framework",
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.1.0"
+  },
+  "engines": {
+    "node": "4"
+  },
+  "homepage": "https://github.com/fs-eng/qa-shared-base#readme",
+  "keywords": [
+    "util",
+    "functional",
+    "client",
+    "browser"
+  ],
+  "license": "SPDX(CC-BY-SA-4.0)",
+  "name": "qa-shared-base",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fs-eng/qa-shared-base.git"
+  },
+  "scripts": {
+    "test": "bash ./bin/tests"
+  },
+  "version": "3.3.11",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "4"
+      },
+      "pkgid": "qa-shared-base@3.3.11"
+    }
+  ]
+}

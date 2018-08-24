@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GraphWalkerConvertedToJS\RuntimeVertex.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">GraphWalkerConvertedToJS/</a> RuntimeVertex.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * &lt;h1&gt;RuntimeVertex&lt;/h1&gt;
+ * Immutable class for Vertex
+ * &lt;/p&gt;
+ * This class is used in models. It guarantees that that the internal states of
+ * the instance will not change after it's construction.
+ */
+&nbsp;
+let Objects = require('./Objects.js');
+let RuntimeBase = require('./RuntimeBase.js');
+&nbsp;
+&nbsp;
+&nbsp;
+const RuntimeVertex = (vertex) =&gt; ({//  public static class RuntimeVertex extends RuntimeBase {
+  objects: Objects(),
+  sharedState: vertex.getSharedState(),
+  runtimeBase: RuntimeBase(vertex.cachedBuilder.builderBase.getId(), vertex.cachedBuilder.builderBase.getName(), vertex.cachedBuilder.builderBase.getRequirements(), vertex.cachedBuilder.builderBase.getProperties()),
+&nbsp;
+  /**
+   * Gets the name of the shared state.
+   *
+   * @return The name as a string.
+   * @see Vertex#setSharedState
+   */
+//This is redundant in JS
+  getSharedState() {//    public String getSharedState() {
+    return this.sharedState;
+  },
+&nbsp;
+  /**
+   * Returns true if the vertex has a valid shared state.
+   *
+   * @return True if the vertex has a shared state.
+   */
+  hasSharedState() {//    public boolean hasSharedState() {
+    return this.objects.isNotNullOrEmpty(this.sharedState);
+  },
+&nbsp;
+  //@Override
+  accept<span class="fstat-no" title="function not covered" >(visitor) {</span>//    public void accept(ElementVisitor visitor) {
+<span class="cstat-no" title="statement not covered" >    visitor.visit(this);</span>
+  },
+&nbsp;
+  //@Override
+  hashCode<span class="fstat-no" title="function not covered" >() {</span>//    public int hashCode() {
+<span class="cstat-no" title="statement not covered" >    const prime = 31;/</span>/      final int prime = 31;
+<span class="cstat-no" title="statement not covered" >    let result = this.runtimeBase.hashCode();/</span>/int
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+             + ((this.sharedState == null) ? 0 : this.sharedState.hashCode());
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  },
+&nbsp;
+  //@Override
+  equals<span class="fstat-no" title="function not covered" >(object) {</span>//    public boolean equals(Object o) {
+<span class="cstat-no" title="statement not covered" >    if (!this.runtimeBase.equals(object)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+   // RuntimeVertex that = (RuntimeVertex) object;//      RuntimeVertex that = (RuntimeVertex) object;
+<span class="cstat-no" title="statement not covered" >    let runtimeVertexObject = Object.assign(new RuntimeVertex(), object);/</span>/I Think this is fixed
+<span class="cstat-no" title="statement not covered" >    return Objects.equals(this.sharedState, runtimeVertexObject.sharedState);</span>
+  }
+});
+&nbsp;
+module.exports = RuntimeVertex;
+&nbsp;
+&nbsp;
+// let objects = new Objects();
+// let sharedState;//how do we isolate letiables to embedded classes??
+&nbsp;
+// class RuntimeVertex extends RuntimeBase {//  public static class RuntimeVertex extends RuntimeBase {
+&nbsp;
+//   constructor(vertex) {
+//       super(vertex.getId(), vertex.getName(), vertex.getRequirements(), vertex.getProperties());
+//       sharedState = vertex.getSharedState();
+//   }
+&nbsp;
+//   /**
+//    * Gets the name of the shared state.
+//    *
+//    * @return The name as a string.
+//    * @see Vertex#setSharedState
+//    */
+// //This is redundant in JS
+//   getSharedState() {//    public String getSharedState() {
+//     return sharedState;
+//   }
+&nbsp;
+//   /**
+//    * Returns true if the vertex has a valid shared state.
+//    *
+//    * @return True if the vertex has a shared state.
+//    */
+//   hasSharedState() {//    public boolean hasSharedState() {
+//     return objects.isNotNullOrEmpty(sharedState);
+//   }
+&nbsp;
+//   /**
+//    * TODO Needs documentation
+//    */
+//   //@Override
+//   accept(visitor) {//    public void accept(ElementVisitor visitor) {
+//     visitor.visit(this);
+//   }
+&nbsp;
+//   //@Override
+//   hashCode() {//    public int hashCode() {
+//     const prime = 31;//      final int prime = 31;
+//     let result = super.hashCode();//int
+//     result = prime * result
+//              + ((sharedState == null) ? 0 : sharedState.hashCode());
+//     return result;
+//   }
+&nbsp;
+//   //@Override
+//   equals(object) {//    public boolean equals(Object o) {
+//     if (!super.equals(object)) {
+//       return false;
+//     }
+//    // RuntimeVertex that = (RuntimeVertex) object;//      RuntimeVertex that = (RuntimeVertex) object;
+//     let runtimeVertexObject = Object.assign(new RuntimeVertex(), object);//I Think this is fixed
+//     return Objects.equals(sharedState, runtimeVertexObject.sharedState);
+//   }
+// }</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 13 2018 11:08:01 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

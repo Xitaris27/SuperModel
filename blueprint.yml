@@ -1,0 +1,7 @@
+version: 1.0
+
+name: qa-shared-base
+build:
+- name: build-npm
+  type: npm
+  full_npm_install: true

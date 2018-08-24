@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GraphWalkerConvertedToJS\RuntimeBase.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">GraphWalkerConvertedToJS/</a> RuntimeBase.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.53% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * #%L
+ * GraphWalker Core
+ * %%
+ * Copyright (C) 2005 - 2014 GraphWalker
+ * %%
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * #L%
+ */
+&nbsp;
+/**
+ * @author Nils Olsson - modified by Joseph Jensen
+ */
+&nbsp;
+"use strict";
+&nbsp;
+let HashMap = require('../../node_modules/hashmap');
+let HashSet = require('../../node_modules/hashset');
+let UUID = require('../../node_modules/uuid/v4');
+&nbsp;
+let Element = require('./Element.js');
+let Objects = require('./Objects.js');
+&nbsp;
+&nbsp;
+const RuntimeBase = ({
+  //these act as default parameters
+  id,//technically, this doesn't cover 100% of the functionality of the original constructor
+  name = "",
+  actions = [],
+  requirements = new HashSet(),
+  properties = new HashMap(),
+&nbsp;
+//this bit of code is odd, I referenced: https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1
+//about 1/3 thru the article it descusses default parameters and the reason there's '...={})' in the code
+//THIS IS BETTER: this parameter is combined with destructuring ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+} = {}) =&gt; ({//public abstract class RuntimeBase implements Element {
+&nbsp;
+  id: createDefault(),//private final String id;
+  name,//private final String name;
+  actions,//private final List&lt;Action&gt; actions;
+  requirements,//private final Set&lt;Requirement&gt; requirements;
+  properties,//private final Map&lt;String, Object&gt; properties;
+  objects: Objects(),
+  element: Element(),
+&nbsp;
+  //getIdOrDefault(newId) {//this was moved outside of the class. create a function that calls the 'outside' function if necessary
+&nbsp;
+  //createDefault() {//this was moved outside of the class
+&nbsp;
+  //@Override
+  getId() {//public String getId() {
+    return id;
+  },
+&nbsp;
+  //@Override
+  hasId() {//public boolean hasId() {
+    return this.objects.isNotNullOrEmpty(id);
+  },
+&nbsp;
+  //@Override
+  getName() {//public String getName() {
+    return name;
+  },
+&nbsp;
+  //@Override
+  hasName() {//public boolean hasName() {
+    return this.objects.isNotNullOrEmpty(name);
+  },
+&nbsp;
+  //@Override
+  getProperty(key) {//public Object getProperty(String key) {
+    return properties.get(key);
+  },
+&nbsp;
+  //@Override
+  hasProperty(key) {//public boolean hasProperty(String key) {
+    return properties.has(key);
+  },
+&nbsp;
+  getActions() {//public List&lt;Action&gt; getActions() {
+    return actions;
+  },
+&nbsp;
+  hasActions() {//public boolean hasActions() {
+    return this.objects.isNotNullOrEmpty(actions);
+  },
+&nbsp;
+  getRequirements() {//public Set&lt;Requirement&gt; getRequirements() {
+    return requirements;
+  },
+&nbsp;
+  hasRequirements() {//public boolean hasRequirements() {
+    return this.objects.isNotNullOrEmpty(requirements);
+  },
+&nbsp;
+  getProperties() {//public Map&lt;String, Object&gt; getProperties() {
+    return properties;
+  },
+&nbsp;
+  hasProperties() {//public boolean hasProperties() {
+    return this.objects.isNotNullOrEmpty(properties);
+  },
+&nbsp;
+  //@Override
+  hashCode<span class="fstat-no" title="function not covered" >() {</span>//public int hashCode() {
+<span class="cstat-no" title="statement not covered" >    let prime = 31;</span>
+<span class="cstat-no" title="statement not covered" >    let result = 1;</span>
+    ;
+<span class="cstat-no" title="statement not covered" >    result = prime * result + ((id == null) ? 0 : id.hashCode());</span>
+<span class="cstat-no" title="statement not covered" >    result = prime * result + ((name == null) ? 0 : name.hashCode());</span>
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+             + ((properties == null) ? 0 : properties.hashCode());
+<span class="cstat-no" title="statement not covered" >    result = prime * result</span>
+             + ((requirements == null) ? 0 : requirements.hashCode());
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  },
+&nbsp;
+  //@Override
+  equals<span class="fstat-no" title="function not covered" >(object) {</span>//public boolean equals(Object o) {
+<span class="cstat-no" title="statement not covered" >    if (this == object) {//this comparison is inadequate in JS</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (this.objects.isNull(object) ) {//|| this.getClass() != this.object.getClass()</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    let runtimeBaseObject = Object.assign(RuntimeBase(), object);/</span>/I Think this is fixed
+    //RuntimeBase that = (RuntimeBase) object;    //MAKE SURE YOU DIDN"T BREAK THIS
+<span class="cstat-no" title="statement not covered" >    return this.objects.equals(id, runtimeBaseObject.id) &amp;&amp;</span>
+           this.objects.equals(name, runtimeBaseObject.name) &amp;&amp;
+           this.objects.equals(actions, runtimeBaseObject.actions) &amp;&amp;
+           this.objects.equals(requirements, runtimeBaseObject.requirements) &amp;&amp;
+           this.objects.equals(properties, runtimeBaseObject.properties);
+  }
+&nbsp;
+});
+&nbsp;
+//do I need a copy of this in the class? (it originally came from the class)
+<span class="fstat-no" title="function not covered" >function getIdOrDefault(newId) {</span>//private String getIdOrDefault(String id) {
+<span class="cstat-no" title="statement not covered" >  let objects = new Objects();</span>
+<span class="cstat-no" title="statement not covered" >    return objects.isNotNullOrEmpty(newId) ? newId : createDefault();</span>
+}
+&nbsp;
+function createDefault() {//private String createDefault() {
+  return UUID();
+}
+&nbsp;
+module.exports = RuntimeBase;
+&nbsp;
+&nbsp;
+// let id;//private final String id;
+// let name;//private final String name;
+// let actions;//private final List&lt;Action&gt; actions;
+// let requirements;//private final Set&lt;Requirement&gt; requirements;
+// let properties;//private final Map&lt;String, Object&gt; properties;
+// let objects = new Objects();
+&nbsp;
+// class RuntimeBase extends Element {//public abstract class RuntimeBase implements Element {
+&nbsp;
+//   //this constructor combines the 4 constructors from the origninal document
+//   constructor(newId, newName, newActions, newRequirements, newProperties) {//
+//     super();
+//     let objects = new Objects();
+&nbsp;
+//     id = getIdOrDefault(newId);
+//     name = newName;
+//     actions = objects.isNotNullOrEmpty(newActions) ? newActions : [];
+//     requirements = objects.isNotNullOrEmpty(newRequirements) ? newRequirements : new Set();
+//     properties = objects.isNotNullOrEmpty(newProperties) ? newProperties : new HashMap();
+//   }
+&nbsp;
+//   get id(){
+//     return id;
+//   }
+//   //getIdOrDefault(newId) {//this was moved outside of the class. create a function that calls the 'outside' function if necessary
+&nbsp;
+//   //createDefault() {//this was moved outside of the class
+&nbsp;
+//   //@Override
+//   getId() {//public String getId() {
+//     return id;
+//   }
+&nbsp;
+//   //@Override
+//   hasId() {//public boolean hasId() {
+//     return objects.isNotNullOrEmpty(id);
+//   }
+&nbsp;
+//   //@Override
+//   getName() {//public String getName() {
+//     return name;
+//   }
+&nbsp;
+//   //@Override
+//   hasName() {//public boolean hasName() {
+//     return objects.isNotNullOrEmpty(name);
+//   }
+&nbsp;
+//   //@Override
+//   getProperty(key) {//public Object getProperty(String key) {
+//     return properties.get(key);
+//   }
+&nbsp;
+//   //@Override
+//   hasProperty(key) {//public boolean hasProperty(String key) {
+//     return properties.has(key);
+//   }
+&nbsp;
+//   getActions() {//public List&lt;Action&gt; getActions() {
+//     return actions;
+//   }
+&nbsp;
+//   hasActions() {//public boolean hasActions() {
+//     return objects.isNotNullOrEmpty(actions);
+//   }
+&nbsp;
+//   getRequirements() {//public Set&lt;Requirement&gt; getRequirements() {
+//     return requirements;
+//   }
+&nbsp;
+//   hasRequirements() {//public boolean hasRequirements() {
+//     return objects.isNotNullOrEmpty(requirements);
+//   }
+&nbsp;
+//   getProperties() {//public Map&lt;String, Object&gt; getProperties() {
+//     return properties;
+//   }
+&nbsp;
+//   hasProperties() {//public boolean hasProperties() {
+//     return objects.isNotNullOrEmpty(properties);
+//   }
+&nbsp;
+//   //@Override
+//   hashCode() {//public int hashCode() {
+//     let prime = 31;
+//     let result = 1;
+//     result = prime * result + ((actions == null) ? 0 : actions.hashCode());
+//     result = prime * result + ((id == null) ? 0 : id.hashCode());
+//     result = prime * result + ((name == null) ? 0 : name.hashCode());
+//     result = prime * result
+//              + ((properties == null) ? 0 : properties.hashCode());
+//     result = prime * result
+//              + ((requirements == null) ? 0 : requirements.hashCode());
+//     return result;
+//   }
+&nbsp;
+//   //@Override
+//   equals(object) {//public boolean equals(Object o) {
+//     if (this == object) {//this comparison is inadequate in JS
+//       return true;
+//     }
+//     if (objects.isNull(object) || this.getClass() != object.getClass()) {
+//       return false;
+//     }
+//     let runtimeBaseObject = Object.assign(new RuntimeBase(), object);//I Think this is fixed
+//     //RuntimeBase that = (RuntimeBase) object;
+//     return Objects.equals(id, runtimeBaseObject.id) &amp;&amp;
+//            Objects.equals(name, runtimeBaseObject.name) &amp;&amp;
+//            Objects.equals(actions, runtimeBaseObject.actions) &amp;&amp;
+//            Objects.equals(requirements, runtimeBaseObject.requirements) &amp;&amp;
+//            Objects.equals(properties, runtimeBaseObject.properties);
+//   }
+&nbsp;
+// }
+&nbsp;
+// //do I need a copy of this in the class? (it originally came from the class)
+// function getIdOrDefault(newId) {//private String getIdOrDefault(String id) {
+//   let objects = new Objects();
+//     return objects.isNotNullOrEmpty(newId) ? newId : createDefault();
+// }
+&nbsp;
+// function createDefault() {//private String createDefault() {
+//   return UUID();
+// }</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 13 2018 11:08:01 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

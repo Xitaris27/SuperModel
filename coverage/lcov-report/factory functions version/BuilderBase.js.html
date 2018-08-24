@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for factory functions version\BuilderBase.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">factory functions version/</a> BuilderBase.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var Builder = require('./Builder.js');
+var HashSet = require('../../node_modules/hashset');
+<span class="cstat-no" title="statement not covered" >var HashMap = require('../../node_modules/hashmap');</span>
+&nbsp;
+// //Class level Variables
+// var id;//String
+// var name;//String
+// var requirements = new HashSet();//Set&lt;Requirement&gt;
+// var properties = new HashMap();//Map&lt;String, Object&gt;   
+&nbsp;
+// class BuilderBase extends Builder {//public abstract class BuilderBase&lt;B, T&gt; implements Builder&lt;T&gt;
+&nbsp;
+//   getId() {//public String getId() {
+//     return id;
+//   }
+&nbsp;
+//   //@SuppressWarnings("unchecked")
+//   setId(newId) {//public B setId(String id) {
+//     id = newId;
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   getName() {// public String getName() {
+//     return name;
+//   }
+&nbsp;
+//   //@SuppressWarnings("unchecked")
+//   setName(newName) {//public B setName(String name) {
+//     name = newName;
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   getRequirements() {//public Set&lt;Requirement&gt; getRequirements() {
+//     return requirements;//return unmodifiableSet(requirements);
+//   }
+&nbsp;
+//  //@SuppressWarnings("unchecked")
+//   addRequirement(requirement) {//public B addRequirement(Requirement requirement) {
+//     requirements.add(requirement);//change to '.set'
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   //@SuppressWarnings("unchecked")
+//   setRequirements(newRequirements) {//public B setRequirements(Set&lt;Requirement&gt; requirements) {
+//     requirements = new HashSet(newRequirements);
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   hasProperty(key) {// public boolean hasProperty(String key) {
+//     return properties.containsKey(key);
+//   }
+&nbsp;
+//   getProperties() {//public Map&lt;String, Object&gt; getProperties() {
+//     return properties;//    return unmodifiableMap(properties);
+//   }
+&nbsp;
+//   //@SuppressWarnings("unchecked")
+//   setProperties(newProperties) {//public B setProperties(Map&lt;String, Object&gt; properties) {
+//     properties = null;
+//     properties = new HashMap(newProperties);
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   //@SuppressWarnings("unchecked")
+//   setProperty(key, value) {//public B setProperty(String key, Object value) {
+//     properties.set(key, value);
+//     return this;//return (B) this;
+//   }
+&nbsp;
+//   getProperty(key) {//public Object getProperty(String key) {
+//     return properties.get(key);
+//   }
+// }
+&nbsp;
+&nbsp;
+//DELETE IF YOU DON"T USE IT
+// {
+//   requirements = new HashSet,
+//   properties = new HashMap()
+// } = {}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >const BuilderBase = ({</span>
+  id = "",//String)
+  name = "",//String
+  requirements = new HashSet(),//Set&lt;Requirement&gt;
+  properties = new HashMap(),//Map&lt;String, Object&gt;
+  builder = Builder(),
+} = {}) =&gt; (<span class="cstat-no" title="statement not covered" >{//public abstract class BuilderBase&lt;B, T&gt; implements Builder&lt;T&gt;</span>
+&nbsp;
+  id,//String)
+  name,//String
+  requirements,//Set&lt;Requirement&gt;
+  properties,//Map&lt;String, Object&gt;
+  builder,
+&nbsp;
+&nbsp;
+  getId<span class="fstat-no" title="function not covered" >() {</span>//public String getId() {
+<span class="cstat-no" title="statement not covered" >    return this.id;</span>
+  },
+&nbsp;
+  setId<span class="fstat-no" title="function not covered" >(newId) {</span>//public B setId(String id) {
+<span class="cstat-no" title="statement not covered" >    this.id = newId;</span>
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  getName<span class="fstat-no" title="function not covered" >() {</span>// public String getName() {
+<span class="cstat-no" title="statement not covered" >    return this.name;</span>
+  },
+&nbsp;
+  setName<span class="fstat-no" title="function not covered" >(newName) {</span>//public B setName(String name) {
+<span class="cstat-no" title="statement not covered" >    this.name = newName;</span>
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  getRequirements<span class="fstat-no" title="function not covered" >() {</span>//public Set&lt;Requirement&gt; getRequirements() {
+<span class="cstat-no" title="statement not covered" >    return this.requirements;/</span>/return unmodifiableSet(requirements);
+  },
+&nbsp;
+  addRequirement<span class="fstat-no" title="function not covered" >(requirement) {</span>//public B addRequirement(Requirement requirement) {
+<span class="cstat-no" title="statement not covered" >    this.requirements.add(requirement);/</span>/change to '.set'
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  setRequirements<span class="fstat-no" title="function not covered" >(newRequirements) {</span>//public B setRequirements(Set&lt;Requirement&gt; requirements) {
+<span class="cstat-no" title="statement not covered" >    this.requirements = new HashSet(newRequirements);</span>
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  hasProperty<span class="fstat-no" title="function not covered" >(key) {</span>// public boolean hasProperty(String key) {
+<span class="cstat-no" title="statement not covered" >    return this.properties.has(key);</span>
+  },
+&nbsp;
+  getProperties<span class="fstat-no" title="function not covered" >() {</span>//public Map&lt;String, Object&gt; getProperties() {
+<span class="cstat-no" title="statement not covered" >    return this.properties;/</span>/    return unmodifiableMap(properties);
+  },
+&nbsp;
+  setProperties<span class="fstat-no" title="function not covered" >(newProperties) {</span>//public B setProperties(Map&lt;String, Object&gt; properties) {
+<span class="cstat-no" title="statement not covered" >    this.properties = null;</span>
+<span class="cstat-no" title="statement not covered" >    this.properties = new HashMap(newProperties);</span>
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  setProperty<span class="fstat-no" title="function not covered" >(key, value) {</span>//public B setProperty(String key, Object value) {
+<span class="cstat-no" title="statement not covered" >    this.properties.set(key, value);</span>
+<span class="cstat-no" title="statement not covered" >    return this;/</span>/return (B) this;
+  },
+&nbsp;
+  getProperty<span class="fstat-no" title="function not covered" >(key) {</span>//public Object getProperty(String key) {
+<span class="cstat-no" title="statement not covered" >    return this.properties.get(key);</span>
+  }
+});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = BuilderBase;</span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 13 2018 15:21:18 GMT-0600 (Mountain Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
